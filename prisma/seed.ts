@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { PrismaClient } from "@prisma/client";
-import { url } from "inspector";
 import bcrypt from "bcrypt";
 import { artistsData } from "./songsData";
 
 // Handle the database connection
 const prisma = new PrismaClient();
 
+// gets executed when seed script command is run
 const run = async () => {
   await Promise.all(
     artistsData.map(async (artist) => {

@@ -2,6 +2,10 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 // https://www.prisma.io/docs/
 
+// datasource : Defines how to connect to the database
+// model : Defines each data model
+// generator : Configures a generator that consumes this schema file. By default, we generate TypeScript client with prisma-client-js generator, and we can declare additional generators using generator directive again.
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,7 +13,6 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model User {
